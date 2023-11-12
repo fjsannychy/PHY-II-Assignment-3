@@ -1,0 +1,52 @@
+#include <stdio.h>
+int main()
+{
+    double lambda;
+    int m;
+    double a1, a2, a3;
+
+
+    printf("Enter wavelength (nm): ");
+    scanf("%lf", &lambda);
+
+    if (lambda < 380 || lambda > 750)
+    {
+        printf("Out of the range. Please enter a valid number.\n");
+        return 1;
+    }
+
+    printf("Enter m: ");
+    scanf("%d", &m);
+
+    printf("Enter slit width a1 (micro meter): ");
+    scanf("%lf", &a1);
+
+    printf("Enter slit width a2 (micro meter): ");
+    scanf("%lf", &a2);
+
+    printf("Enter slit width a3 (micro meter): ");
+    scanf("%lf", &a3);
+
+    a1 *= 1000;
+    a2 *= 1000;
+    a3 *= 1000;
+
+    double e1 = (m * lambda) / a1;
+    double e2 = (m * lambda) / a2;
+    double e3 = (m * lambda) / a3;
+
+    if (e1 > e2 && e1 > e3)
+    {
+        printf("Slit 1 bent the light most.\n");
+    }
+    else if (e2 > e1 && e2 > e3)
+    {
+        printf("Slit 2 bent the light most.\n");
+    }
+    else
+    {
+        printf("Slit 3 bent the light most.\n");
+    }
+
+    return 0;
+}
