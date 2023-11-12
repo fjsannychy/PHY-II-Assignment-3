@@ -1,0 +1,12 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    double m1=3.0, w_l1=530.0, angle1=65.0, d, Angle;
+    angle1*=(3.1416/180.0);
+    Angle=sin(angle1);
+    d=(m1*w_l1)/Angle;
+    double angle2, m2=2.0, w_l2=700.0;
+    angle2=(asin((m2*w_l2)/d))*(180.0/3.1416);
+    printf("The angle of red light is: %lf degree\n", angle2);
+}
